@@ -3,17 +3,16 @@ import {
   Alert,
   SafeAreaView,
   StatusBar,
-  StyleSheet,
   Text,
   TouchableOpacity,
   useColorScheme,
   View,
 } from 'react-native';
-import tw from 'tailwind-rn';
 import Details from './Components/Details';
 import Home from './Components/Home';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import tw from 'twrnc';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -31,28 +30,30 @@ const App = () => {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <View style={styles.sectionContainer} className="">
-        <Text style={styles.topText}>Meal Manager</Text>
+      <View style={tw`bg-[#333]`} className="">
+        <Text style={tw`text-white text-2xl text-center py-5`}>
+          Meal Manager
+        </Text>
       </View>
-      <View style={styles.navContainer}>
-        <View style={styles.navMenu}>
+      <View style={tw`mt-2 flex flex-row items-center justify-center gap-2`}>
+        <View style={tw`bg-[#444] rounded-md`}>
           <Text
-            onPress={() => console.warn('Ami First')}
-            style={styles.navText}>
+            onPress={() => console.warn(tw`w-1`)}
+            style={tw`text-white px-7 py-2`}>
             Box 1
           </Text>
         </View>
-        <View style={styles.navMenu}>
+        <View style={tw`bg-[#444] rounded-md`}>
           <Text
             onPress={() => console.warn('Ami Second')}
-            style={styles.navText}>
+            style={tw`text-white px-7 py-2`}>
             Box 2
           </Text>
         </View>
-        <View style={styles.navMenu}>
+        <View style={tw`bg-[#444] rounded-md`}>
           <Text
             onPress={() => console.warn('Ami Third')}
-            style={tw`text-blue-500`}>
+            style={tw`text-white px-7 py-2`}>
             Box 3
           </Text>
         </View>
@@ -62,8 +63,8 @@ const App = () => {
         <TouchableOpacity
           onPress={testPress}
           activeOpacity={0.8}
-          style={styles.button}>
-          <Text style={styles.buttonText}>Click Me</Text>
+          style={tw`bg-[#333] rounded-md p-2 mx-auto w-24 mt-7`}>
+          <Text style={tw`text-center text-lg text-white`}>Click Me</Text>
         </TouchableOpacity>
       </View>
       <View>
@@ -82,45 +83,5 @@ const App = () => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {backgroundColor: '#333', elevation: 50},
-  topText: {
-    color: '#fff',
-    fontSize: 25,
-    paddingVertical: 20,
-    textAlign: 'center',
-  },
-  button: {
-    backgroundColor: '#333',
-    padding: 10,
-    borderRadius: 5,
-    alignItems: 'center',
-    width: 100,
-    marginTop: 30,
-    alignSelf: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-  },
-  navContainer: {
-    marginTop: 10,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 10,
-  },
-  navMenu: {
-    backgroundColor: '#444',
-    borderRadius: 10,
-  },
-  navText: {
-    color: '#fff',
-    paddingVertical: 5,
-    paddingHorizontal: 30,
-  },
-});
 
 export default App;
