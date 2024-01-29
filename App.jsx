@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Alert,
   SafeAreaView,
@@ -15,6 +15,7 @@ import MyForm from './Components/MyForm';
 import Users from './Components/Users';
 
 const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const isDarkMode = useColorScheme() === 'dark';
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -66,9 +67,15 @@ const App = () => {
           style={tw`bg-[#333] rounded-md p-2 mx-auto w-24 mt-7`}>
           <Text style={tw`text-center text-lg text-white`}>Click Me</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => setIsOpen(!isOpen)}
+          activeOpacity={0.8}
+          style={tw`bg-[#333] rounded-md p-2 mx-auto w-24 mt-7`}>
+          <Text style={tw`text-center text-lg text-white`}>Users</Text>
+        </TouchableOpacity>
       </View>
       <MyForm />
-      <Users />
+      {isOpen && <Users />}
       {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
