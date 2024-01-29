@@ -8,11 +8,11 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import Details from './Components/Details';
-import Home from './Components/Home';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import tw from 'twrnc';
+import MyForm from './Components/MyForm';
+import Users from './Components/Users';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -39,22 +39,22 @@ const App = () => {
         <View style={tw`bg-[#444] rounded-md`}>
           <Text
             onPress={() => console.warn(tw`w-1`)}
-            style={tw`text-white px-7 py-2`}>
-            Box 1
+            style={tw`text-white px-7 py-2 text-lg`}>
+            Home
           </Text>
         </View>
         <View style={tw`bg-[#444] rounded-md`}>
           <Text
             onPress={() => console.warn('Ami Second')}
-            style={tw`text-white px-7 py-2`}>
-            Box 2
+            style={tw`text-white px-7 py-2 text-lg`}>
+            Order
           </Text>
         </View>
         <View style={tw`bg-[#444] rounded-md`}>
           <Text
             onPress={() => console.warn('Ami Third')}
-            style={tw`text-white px-7 py-2`}>
-            Box 3
+            style={tw`text-white px-7 py-2 text-lg`}>
+            Contact
           </Text>
         </View>
       </View>
@@ -67,10 +67,8 @@ const App = () => {
           <Text style={tw`text-center text-lg text-white`}>Click Me</Text>
         </TouchableOpacity>
       </View>
-      <View>
-        <Home />
-        <Details />
-      </View>
+      <MyForm />
+      <Users />
       {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
