@@ -75,7 +75,7 @@ const App = () => {
         </TouchableOpacity>
       </View>
       <MyForm />
-      {isOpen && <Users />}
+      {isOpen ? <Users /> : null}
       {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
