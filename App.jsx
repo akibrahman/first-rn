@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import {
   Alert,
+  Platform,
   SafeAreaView,
   ScrollView,
   StatusBar,
+  StyleSheet,
   Text,
   TouchableOpacity,
   useColorScheme,
@@ -21,6 +23,7 @@ import Users from './Components/Users';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const device = Platform.OS;
   const isDarkMode = useColorScheme() === 'dark';
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -83,6 +86,7 @@ const App = () => {
           </TouchableOpacity>
         </View>
         <MyForm />
+        <Text style={styles.platform}>Platform: {device}</Text>
         {isOpen && <Users />}
         <Buttons />
         <Radio />
@@ -101,5 +105,14 @@ const App = () => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  platform: {
+    fontSize: 28,
+    textAlign: 'center',
+    color: '#2296F3',
+    fontWeight: '800',
+  },
+});
 
 export default App;
