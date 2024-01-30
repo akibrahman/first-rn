@@ -12,7 +12,7 @@ const Loader = () => {
 
 const styles = StyleSheet.create({
   main: {
-    marginVertical: 50,
+    marginTop: 50,
   },
 });
 

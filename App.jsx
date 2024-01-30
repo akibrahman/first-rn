@@ -34,8 +34,10 @@ const App = () => {
     <SafeAreaView style={backgroundStyle}>
       <ScrollView>
         <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          backgroundColor={backgroundStyle.backgroundColor}
+          // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          barStyle="light-content"
+          // backgroundColor={backgroundStyle.backgroundColor}
+          backgroundColor="#333"
         />
         <View style={tw`bg-[#333]`} className="">
           <Text style={tw`text-white text-2xl text-center py-5`}>
@@ -82,18 +84,6 @@ const App = () => {
         </View>
         <MyForm />
         {isOpen && <Users />}
-        <View
-          style={tw`w-[90%] mx-auto flex flex-row items-center justify-between`}>
-          <View style={tw`bg-blue-500 p-10 rounded-full`}>
-            <Text style={tw`text-3xl text-white font-bold`}>1</Text>
-          </View>
-          <View style={tw`bg-blue-500 p-10 rounded-full`}>
-            <Text style={tw`text-3xl text-white font-bold`}>2</Text>
-          </View>
-          <View style={tw`bg-blue-500 p-10 rounded-full`}>
-            <Text style={tw`text-3xl text-white font-bold`}>3</Text>
-          </View>
-        </View>
         <Buttons />
         <Radio />
         <Loader />
