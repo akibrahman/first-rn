@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, {useEffect} from 'react';
+import React from 'react';
 import {FlatList, Text, View} from 'react-native';
 import tw from 'twrnc';
 
@@ -19,10 +19,6 @@ const user = [
 ];
 
 const Users = () => {
-  const timer = setInterval(() => {
-    console.warn('Timer R');
-  }, 5000);
-  useEffect(() => () => clearInterval(timer));
   return (
     <View>
       <FlatList
