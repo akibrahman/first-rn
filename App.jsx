@@ -11,6 +11,7 @@ import {
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import tw from 'twrnc';
+import Buttons from './Components/Buttons';
 import MyForm from './Components/MyForm';
 import Users from './Components/Users';
 
@@ -75,7 +76,20 @@ const App = () => {
         </TouchableOpacity>
       </View>
       <MyForm />
-      {isOpen ? <Users /> : null}
+      {isOpen && <Users />}
+      <View
+        style={tw`w-[90%] mx-auto flex flex-row items-center justify-between`}>
+        <View style={tw`bg-blue-500 p-10 rounded-full`}>
+          <Text style={tw`text-3xl text-white font-bold`}>1</Text>
+        </View>
+        <View style={tw`bg-blue-500 p-10 rounded-full`}>
+          <Text style={tw`text-3xl text-white font-bold`}>2</Text>
+        </View>
+        <View style={tw`bg-blue-500 p-10 rounded-full`}>
+          <Text style={tw`text-3xl text-white font-bold`}>3</Text>
+        </View>
+      </View>
+      <Buttons />
       {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
