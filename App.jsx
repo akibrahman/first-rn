@@ -14,6 +14,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import tw from 'twrnc';
 import Buttons from './Components/Buttons';
 import Loader from './Components/Loader';
+import Modal from './Components/Modal';
 import MyForm from './Components/MyForm';
 import Radio from './Components/Radio';
 import Users from './Components/Users';
@@ -96,6 +97,7 @@ const App = () => {
         <Buttons />
         <Radio />
         <Loader />
+        <Modal />
         {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
